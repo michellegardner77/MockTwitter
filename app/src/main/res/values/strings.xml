@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Mock Twitter</string>
+    <string name="edit_message">Enter a Post</string>
+    <string name="button_send">Post</string>
+    <string name="about_string">About</string>
+</resources>
