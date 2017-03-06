@@ -3,5 +3,11 @@
     <!--ellipsis menu items-->
     <item android:id="@+id/action_about"
         android:title="@string/about_string" />
+    <item
+        android:id="@+id/new_post"
+        android:title="New Post" />
+    <item
+        android:id="@+id/list"
+        android:title="MyDash" />
 
 </menu>
