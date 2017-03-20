@@ -13,21 +13,24 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.EditText;
+import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.mgard.test2.models.Post;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-
-    private ListView mListView;
 
     // Data Source ; a blank array list
     private ArrayList<Post> postArrayList = new ArrayList<>();
 
+    ListAdapter postsAdapter;
 
     // Adapter (I hope)
 //        // app context, layout that contains a TextView for each string in the array, the string array
@@ -37,35 +40,55 @@ public class MainActivity extends AppCompatActivity {
 //        listView.setAdapter(adapter);
 //    }
 
+
+    // 3/17
+    // Array of options --> ArrayAdapter --> ListView
+    // List view: {views: posts.xml}
+
     public final static String EXTRA_MESSAGE = "com.mgard.test2.MESSAGE";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        populateListView();
 
-        /*
-        mListView = (ListView) findViewById(R.id.recipe_list_view);
-
-        // 1
-        final ArrayList<Recipe> recipeList = Recipe.getRecipesFromFile("recipes.json", this);
+        getText();
 
 
-        // 2
-        String[] listItems = new String[recipeList.size()];
-
-        // 3
-        for(int i = 0; i < recipeList.size(); i++){
-            Recipe recipe = recipeList.get(i);
-            listItems[i] = recipe.title;
+        // Dumby posts
+        for(int i=0; i<5; i++){
+            Post newPost = new Post("Post " + i, "User" + i, new Date());
+            postArrayList.add(newPost);
         }
 
-        // 4
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, listItems);
-        mListView.setAdapter(adapter);
-        */
+
+        // create an array list of Strings
+        //String[] posts = {"post1", "post2", "post3"};
+
+        postsAdapter = new PostsAdapter(this, postArrayList);
+        ListView postsListView = (ListView) findViewById(R.id.posts_list_view);
+        postsListView.setAdapter(postsAdapter);
 
 
+    }
+
+    private void getText() {
+    }
+
+    private void populateListView() {
+
+        // Create List of items
+        String[] myPosts = {};
+
+        // Build Adapter
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+                this,               // Context for the activity
+                R.layout.posts,    // layout to use
+                myPosts);          // items to be displayed
+        // Configure list view
+        ListView list = (ListView) findViewById(R.id.posts_list_view);
+        list.setAdapter(adapter);
     }
 
     @Override
@@ -91,14 +114,6 @@ public class MainActivity extends AppCompatActivity {
             startActivity(aboutIntent);
         }
 
-        if (id == R.id.list){
-            Intent aboutIntent = new Intent(this, ListViewLoader.class);
-            startActivity(aboutIntent);
-        }
-
-
-
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -111,25 +126,33 @@ public class MainActivity extends AppCompatActivity {
         editText.setText("");
     }
 
-    // Called when the user clicks the Send button
-    // Will send the message to a new activity (new page)
-    public void sendPost(View view) {
 
-        Intent intent = new Intent(this, DisplayMessageActivity.class);
+
+
+    // Called when the user clicks the Send button
+    // Will send the message to a new activity (new page) <-- Does not anymore 3/19
+    public void sendPost(View view) {
+        //Intent intent = new Intent(this, DisplayMessageActivity.class);
         EditText editText = (EditText) findViewById(R.id.edit_message);
         String enteredPostText = editText.getText().toString();
 
-        Post newPost = new Post(enteredPostText, "User1", new Date());
+        // adds post to posts array list and list view if the user entered in text
+        if (!enteredPostText.isEmpty()) {
+            Post newPost = new Post(enteredPostText, "User1", new Date());
 
-        postArrayList.add(newPost);
+            postArrayList.add(newPost);
 
-        for (Post post: postArrayList) {
-            System.out.println(post.getPostText());
+            // casts postsAdapter that is an ArrayAdapter to one of its parent class BaseAdapter
+            // calls notifyDataSetChanged to tell the adapter the data has changed
+            // this will update the UI to reflect the change data
+            ((BaseAdapter) postsAdapter).notifyDataSetChanged();
+
+            //intent.putExtra(EXTRA_MESSAGE, enteredPostText);
+            //startActivity(intent);
+
+            // clear the text box after user enters in data
+            editText.setText("");
         }
-
-
-        intent.putExtra(EXTRA_MESSAGE, enteredPostText);
-        startActivity(intent);
 
     }
 

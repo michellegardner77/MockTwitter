@@ -19,6 +19,12 @@ public class Post {
         this.submitDate = submitDate;
     }
 
+    public Post (String postText, String submitter){
+        this.postText = postText;
+        this.submitter =  submitter;
+        this.submitDate = new Date();
+    }
+
 
     public String getPostText() {
         return postText;
