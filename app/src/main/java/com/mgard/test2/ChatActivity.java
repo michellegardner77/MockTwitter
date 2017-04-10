@@ -14,31 +14,25 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.mgard.test2.models.Post;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class ChatActivity extends AppCompatActivity {
 
     // Data Source ; a blank array list
     private ArrayList<Post> postArrayList = new ArrayList<>();
 
     ListAdapter postsAdapter;
 
-    // Adapter (I hope)
-//        // app context, layout that contains a TextView for each string in the array, the string array
-//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, postArrayList);
-//
-//        ListView listView = (ListView) findViewById(R.id.list);
-//        listView.setAdapter(adapter);
-//    }
+// 4/9 Changed name of Activity to ChatActivity, use to be MainActivity
+    // when open the app, first thing user see is Log in screen
 
 
     // 3/17
@@ -69,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
         postsAdapter = new PostsAdapter(this, postArrayList);
         ListView postsListView = (ListView) findViewById(R.id.posts_list_view);
         postsListView.setAdapter(postsAdapter);
+
 
 
     }
@@ -110,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
 
         // 3/5 3:55pm
         if (id == R.id.edit_message) {
-            Intent aboutIntent = new Intent (this, MainActivity.class);
+            Intent aboutIntent = new Intent (this, ChatActivity.class);
             startActivity(aboutIntent);
         }
 
