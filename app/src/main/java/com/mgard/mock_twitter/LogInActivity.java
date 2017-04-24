@@ -4,7 +4,7 @@ Mock Twitter App
   LoginActivity is the first page that will be shown to the user when starting up the app.*/
 
 
-package com.mgard.test2;
+package com.mgard.mock_twitter;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -15,8 +15,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import static android.R.attr.id;
 
 public class LogInActivity extends AppCompatActivity {
 
@@ -57,8 +55,6 @@ public class LogInActivity extends AppCompatActivity {
                     // opens up the ChatActivity page
                         Intent intent = new Intent(LogInActivity.this, ChatActivity.class);
                         startActivity(intent);
-
-
                 }else{
                     //pops up when user/password is incorrect
                     Toast.makeText(getApplicationContext(), "Wrong Credentials", Toast.LENGTH_SHORT).show();
@@ -82,5 +78,7 @@ public class LogInActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+
     }
 }

@@ -1,4 +1,4 @@
-package com.mgard.test2;
+package com.mgard.mock_twitter;
 
 import android.widget.ArrayAdapter;
 import android.content.Context;
@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.mgard.test2.models.Post;
+import com.mgard.mock_twitter.models.Post;
 
 import java.util.ArrayList;
 

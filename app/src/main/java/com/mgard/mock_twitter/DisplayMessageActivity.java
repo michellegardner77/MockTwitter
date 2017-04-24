@@ -1,4 +1,4 @@
-package com.mgard.test2;
+package com.mgard.mock_twitter;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

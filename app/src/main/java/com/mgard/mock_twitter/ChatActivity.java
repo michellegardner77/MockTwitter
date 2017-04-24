@@ -4,7 +4,7 @@
  */
 
 
-package com.mgard.test2;
+package com.mgard.mock_twitter;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -14,12 +14,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
-import com.mgard.test2.models.Post;
+import com.mgard.mock_twitter.models.Post;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -106,6 +105,13 @@ public class ChatActivity extends AppCompatActivity {
         // 3/5 3:55pm
         if (id == R.id.edit_message) {
             Intent aboutIntent = new Intent (this, ChatActivity.class);
+            startActivity(aboutIntent);
+        }
+
+        // 4/23
+        // my dash activity
+        if (id == R.id.my_dash){
+            Intent aboutIntent = new Intent(this, MyDash.class);
             startActivity(aboutIntent);
         }
 

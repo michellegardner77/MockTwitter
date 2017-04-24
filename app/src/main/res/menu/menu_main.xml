@@ -7,7 +7,7 @@
         android:id="@+id/new_post"
         android:title="New Post" />
     <item
-        android:id="@+id/list"
+        android:id="@+id/my_dash"
         android:title="MyDash" />
 
 </menu>

@@ -1,4 +1,4 @@
-package com.mgard.test2.models;
+package com.mgard.mock_twitter.models;
 
 import java.util.Date;
 

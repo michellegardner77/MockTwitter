@@ -4,5 +4,5 @@
     <string name="edit_message">Enter a Post</string>
     <string name="button_send">Post</string>
     <string name="about_string">About</string>
-
+    <string name="my_dash">My Dash</string>
 </resources>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.mgard.test2">
+    package="com.mgard.mock_twitter">
 
     <application
         android:allowBackup="true"
@@ -8,17 +8,17 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LogInActivity">
+        <activity android:name="com.mgard.mock_twitter.LogInActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DisplayMessageActivity" />
-        <activity android:name=".AboutActivity" />
-        <activity android:name=".ChatActivity" />
-
+        <activity android:name="com.mgard.mock_twitter.DisplayMessageActivity" />
+        <activity android:name="com.mgard.mock_twitter.AboutActivity" />
+        <activity android:name="com.mgard.mock_twitter.ChatActivity" />
+        <activity android:name="com.mgard.mock_twitter.MyDash" />
         <!--<activity android:name=".LogInActivity"></activity>-->
     </application>
 
