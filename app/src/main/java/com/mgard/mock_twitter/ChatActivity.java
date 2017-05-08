@@ -30,6 +30,8 @@ public class ChatActivity extends AppCompatActivity {
 
     ListAdapter postsAdapter;
 
+    String userID;
+
 // 4/9 Changed name of Activity to ChatActivity, use to be MainActivity
     // when open the app, first thing user see is Log in screen
 
@@ -104,15 +106,15 @@ public class ChatActivity extends AppCompatActivity {
 
         // 3/5 3:55pm
         if (id == R.id.edit_message) {
-            Intent aboutIntent = new Intent (this, ChatActivity.class);
-            startActivity(aboutIntent);
+            Intent chatIntent = new Intent (this, ChatActivity.class);
+            startActivity(chatIntent);
         }
 
         // 4/23
         // my dash activity
         if (id == R.id.my_dash){
-            Intent aboutIntent = new Intent(this, MyDash.class);
-            startActivity(aboutIntent);
+            Intent myDashIntent = new Intent(this, MyDash.class);
+            startActivity(myDashIntent);
         }
 
         return super.onOptionsItemSelected(item);

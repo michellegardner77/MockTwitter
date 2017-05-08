@@ -21,30 +21,30 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Mock Twitter"
-        android:textColor="@android:color/black"
-        android:textSize="35dp"
         android:layout_below="@+id/textview"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="39dp"
-        android:enabled="false"/>
+        android:enabled="false"
+        android:text="Mock Twitter"
+        android:textColor="@android:color/black"
+        android:textSize="35dp" />
 
     <EditText
         android:id="@+id/editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textView"
+        android:layout_alignStart="@+id/textView"
+        android:layout_below="@+id/imageView"
         android:layout_marginTop="40dp"
         android:focusable="true"
         android:hint="Enter Name"
-        android:textColorHighlight="#030501"
-        android:layout_below="@+id/imageView"
-        android:layout_alignStart="@+id/textView"
-        android:layout_alignEnd="@+id/textView" />
+        android:textColorHighlight="#030501" />
 
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView"
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true" />
 
@@ -59,44 +59,43 @@
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
-        android:textColor="@android:color/darker_gray"
-        />
+        android:textColor="@android:color/darker_gray" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Attempts Left:"
         android:id="@+id/textView2"
-        android:textSize="20dp"
-        android:layout_below="@+id/editText2"
-        android:layout_toStartOf="@+id/imageView" />
-
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Text"
-        android:id="@+id/textView3"
-        android:textSize="25dp"
         android:layout_below="@+id/editText2"
-        android:layout_alignStart="@+id/button2" />
+        android:layout_toStartOf="@+id/imageView"
+        android:text="Attempts Left:"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/button2"
+        android:layout_below="@+id/editText2"
+        android:text="New Text"
+        android:textSize="25dp" />
 
     <Button
+        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login"
-        android:id="@+id/button"
         android:layout_alignBaseline="@+id/button2"
         android:layout_alignBottom="@+id/button2"
-        android:layout_toStartOf="@+id/textview" />
+        android:layout_toStartOf="@+id/textview"
+        android:text="Login" />
 
     <Button
+        android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cancel"
-        android:id="@+id/button2"
-        android:layout_below="@+id/textView3"
         android:layout_alignEnd="@+id/editText2"
-        android:layout_marginTop="30dp" />
+        android:layout_below="@+id/textView3"
+        android:layout_marginTop="30dp"
+        android:text="Cancel" />
 
 
 </RelativeLayout>

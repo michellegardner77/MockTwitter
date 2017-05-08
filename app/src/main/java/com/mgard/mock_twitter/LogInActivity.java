@@ -53,7 +53,7 @@ public class LogInActivity extends AppCompatActivity {
 
                     // Here, allows the Login button to work
                     // opens up the ChatActivity page
-                        Intent intent = new Intent(LogInActivity.this, ChatActivity.class);
+                        Intent intent = new Intent(getApplicationContext(), ChatActivity.class);
                         startActivity(intent);
                 }else{
                     //pops up when user/password is incorrect
